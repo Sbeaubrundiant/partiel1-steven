@@ -17,7 +17,12 @@ public class BbanTest {
     @Test
     void shouldNotConstruct() {
 	assertThrows(NullPointerException.class, () -> {
-	    // new Bban(null);
+	    // new Bban(0, 0, null, 0);
 	});
     }
+    // @Test
+    // void shoudBbanBeEquals() {
+    // Bban bban = new Bban(bankCode, cashDesk, accountNum, keyLock);
+    // Object actual = Bban.getbankCode +
+    // }
 }

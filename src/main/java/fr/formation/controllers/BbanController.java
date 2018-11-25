@@ -17,13 +17,14 @@ public class BbanController {
     private final static Map<String, Bban> BBANLIST = new HashMap<>();
     static {
 	BBANLIST.put("00000000001", buildBban1());
+	BBANLIST.put("00000000002", buildBban2());
     }
 
     @GET
-    @Path("/partiel1/{bankCode}")
+    @Path("/partiel1/{bban}")
     @Produces(MediaType.APPLICATION_JSON)
     public Bban partiel1(@PathParam("bankCode") String bankCode) {
-	return BBANLIST.get(BBANLIST);
+	return BBANLIST.get(bankCode);
     }
 
     private static Bban buildBban1() {
@@ -31,6 +32,16 @@ public class BbanController {
 	int cashDesk = 00550;
 	String accountNum = "0000157841Z";
 	int keyLock = 25;
-	return buildBban1();
+	Bban bban = new Bban(bankCode, cashDesk, accountNum, keyLock);
+	return bban;
+    }
+
+    private static Bban buildBban2() {
+	int bankCode = 3003;
+	int cashDesk = 00433;
+	String accountNum = "0000654172H";
+	int keyLock = 22;
+	Bban bban = new Bban(bankCode, cashDesk, accountNum, keyLock);
+	return bban;
     }
 }

@@ -1,16 +1,24 @@
 package fr.formation.partiel1;
 
+import java.util.Objects;
+
 public class Bban {
 
-    private int bankCode;
+    // variable declaration
+    public int bankCode;
 
     private int cashDesk;
 
-    private String accountNumber;
+    private String accountNum;
 
     private int keyLock;
 
+    // Constructor
     public Bban(int bankCode, int cashDesk, String accountNum, int keyLock) {
+	setBankCode(bankCode);
+	setCashDesk(cashDesk);
+	setAccountNum(accountNum);
+	setKeyLock(keyLock);
     }
 
     public int getBankCode() {
@@ -18,6 +26,7 @@ public class Bban {
     }
 
     public void setBankCode(int bankCode) {
+	Objects.requireNonNull(bankCode);
 	this.bankCode = bankCode;
     }
 
@@ -26,15 +35,16 @@ public class Bban {
     }
 
     public void setCashDesk(int cashDesk) {
+	Objects.requireNonNull(cashDesk);
 	this.cashDesk = cashDesk;
     }
 
-    public String getAccountNumber() {
-	return accountNumber;
+    public String getAccountNum() {
+	return accountNum;
     }
 
-    public void setAccountNumber(String accountNumber) {
-	this.accountNumber = accountNumber;
+    public void setAccountNum(String accountNum) {
+	this.accountNum = accountNum;
     }
 
     public int getKeyLock() {
@@ -42,6 +52,7 @@ public class Bban {
     }
 
     public void setKeyLock(int keyLock) {
+	Objects.requireNonNull(keyLock);
 	this.keyLock = keyLock;
     }
 }
